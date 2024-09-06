@@ -22,21 +22,6 @@ func TestNormaliseURL(t *testing.T) {
 			inputURL: "http://Blog.Boot.Dev/Path/",
 			expected: "blog.boot.dev/path",
 		},
-		// {
-		// 	name:     "with query parameters",
-		// 	inputURL: "https://blog.boot.dev/path?utm_source=google",
-		// 	expected: "blog.boot.dev/path",
-		// },
-		// {
-		// 	name:     "remove empty query string",
-		// 	inputURL: "https://blog.boot.dev/path?",
-		// 	expected: "blog.boot.dev/path",
-		// },
-		// {
-		// 	name:     "with fragments",
-		// 	inputURL: "https://blog.boot.dev/path#section",
-		// 	expected: "blog.boot.dev/path",
-		// },
 		{
 			name:     "empty path",
 			inputURL: "https://blog.boot.dev",
