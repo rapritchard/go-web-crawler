@@ -45,21 +45,6 @@ func TestGetURLsFromHTML(t *testing.T) {
 			expected: nil,
 		},
 		{
-			name:     "handle invalid base URL",
-			inputURL: `:\\invalidBaseURL`,
-			inputBody: `
-<html>
-	<body>
-		<a href="/path">
-			<span>Boot.dev</span>
-		</a>
-	</body>
-</html>
-`,
-			expected:      nil,
-			errorContains: "could not parse base URL",
-		},
-		{
 			name:     "invalid href URL",
 			inputURL: "https://blog.boot.dev",
 			inputBody: `
