@@ -29,7 +29,7 @@ func TestSortPages(t *testing.T) {
 			},
 		},
 		{
-			name: "alphabetize",
+			name: "alphabetise",
 			input: map[string]int{
 				"d": 1,
 				"a": 1,
@@ -46,7 +46,7 @@ func TestSortPages(t *testing.T) {
 			},
 		},
 		{
-			name: "order count then alphabetize",
+			name: "order count then alphabetise",
 			input: map[string]int{
 				"d": 2,
 				"a": 1,
