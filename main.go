@@ -12,7 +12,7 @@ func main() {
 
 	if len(args) < 3 {
 		fmt.Println("not enough arguments provided")
-		fmt.Println("usage: crawler <baseURL> <maxConcurrency> <maxPages>")
+		fmt.Println("usage: go-web-crawler <baseURL> <maxConcurrency> <maxPages>")
 		os.Exit(1)
 	}
 
