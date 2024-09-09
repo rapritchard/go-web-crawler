@@ -19,11 +19,20 @@ func main() {
 		os.Exit(1)
 	}
 
-	baseURL := args[0]
-	fmt.Printf("starting crawl of: %v\n", baseURL)
-	pages := make(map[string]int)
-	crawlPage(baseURL, baseURL, pages)
-	for key, value := range pages {
-		fmt.Printf("%s -> visited %d times\n", key, value)
+	rawBaseURL := args[0]
+	const maxConcurrency = 3
+	cfg, err := configure(rawBaseURL, maxConcurrency)
+	if err != nil {
+		fmt.Printf("Error - configure: %v", err)
+		return
+	}
+	fmt.Printf("starting crawl of: %s...\n", args[0])
+
+	cfg.wg.Add(1)
+	go cfg.crawlPage(rawBaseURL)
+	cfg.wg.Wait()
+
+	for url, visits := range cfg.pages {
+		fmt.Printf("%s ->  %d\n", url, visits)
 	}
 }
